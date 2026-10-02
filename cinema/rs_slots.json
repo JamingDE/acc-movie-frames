@@ -1,0 +1,13 @@
+{
+  "period": 3,
+  "fps": 6.67,
+  "note": "slot = one Create redstone-link frequency (same item in BOTH slots of the link). Channel must be one of the 13 built-in ACC channels. prefix is the frame URL stem; files must be named 1.jpg, 2.jpg, ... unpadded (graph appends str(n)+'.jpg'). frames = number of jpgs (movie ends -> black).",
+  "slots": [
+    {"channel": "pitch_up",   "first": "minecraft:redstone",     "second": "minecraft:redstone",     "prefix": "https://raw.githubusercontent.com/JamingDE/acc-movie-frames/main/frames/g_", "frames": 64},
+    {"channel": "pitch_down", "first": "minecraft:gold_ingot",   "second": "minecraft:gold_ingot",   "prefix": "", "frames": 0},
+    {"channel": "roll_left",  "first": "minecraft:iron_ingot",   "second": "minecraft:iron_ingot",   "prefix": "", "frames": 0},
+    {"channel": "roll_right", "first": "minecraft:diamond",      "second": "minecraft:diamond",      "prefix": "", "frames": 0},
+    {"channel": "yaw_left",   "first": "minecraft:emerald",      "second": "minecraft:emerald",      "prefix": "", "frames": 0},
+    {"channel": "yaw_right",  "first": "minecraft:lapis_lazuli", "second": "minecraft:lapis_lazuli", "prefix": "", "frames": 0}
+  ]
+}
