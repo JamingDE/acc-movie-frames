@@ -13,7 +13,7 @@ Default base points at the JamingDE/acc-movie-frames GitHub repo.
 """
 import json, uuid, os, datetime, argparse, glob
 
-PERIOD_TICKS = 10         # 20 ticks/s / 10 = 2 fps -> 60 frames = 30 s
+PERIOD_TICKS_FROM_ARGS = True  # period comes from --period
 NAMESP = uuid.uuid5(uuid.NAMESPACE_URL, "acc-vid-web")
 SURF_W, SURF_H = 1536, 864
 GRAPH_ID = "e2d303bc-5e06-38bf-b27f-a0628eba1bd8"
@@ -24,6 +24,9 @@ DEFAULT_BASE = "https://raw.githubusercontent.com/JamingDE/acc-movie-frames/main
 ap = argparse.ArgumentParser()
 ap.add_argument("--base", default=DEFAULT_BASE)
 ap.add_argument("--version", default="1.1.0")
+ap.add_argument("--frames", type=int, default=60)
+ap.add_argument("--pattern", default="f_%02d")
+ap.add_argument("--period", type=int, default=10)
 args = ap.parse_args()
 
 def u(name): return str(uuid.uuid5(NAMESP, args.version + "/" + name))
@@ -31,7 +34,7 @@ def num(v):  return {"Payload": {"Value": float(v)}, "Type": "number"}
 def stri(v): return {"Payload": {"Value": v}, "Type": "string"}
 
 base = args.base.rstrip("/")
-urls = [f"{base}/f_{i:02d}.jpg" for i in range(1, 61)]
+urls = [f"{base}/{args.pattern % i}.jpg" for i in range(1, args.frames + 1)]
 N = len(urls)
 assert all(len(x) < 2048 for x in urls), "URLs must stay under 2048 chars"
 frame_table = "#".join(urls)
@@ -70,9 +73,9 @@ var_set_frame = {
 
 nodes = [
     {"Y": 20, "X": -1150, "Id": u("periodic"), "Type": "event_periodic",
-     "Data": {"Period": PERIOD_TICKS,
+     "Data": {"Period": args.period,
               "PersistentPortValues": {"output:exec": num(0)},
-              "Defaults": {"period": num(PERIOD_TICKS)},
+              "Defaults": {"period": num(args.period)},
               "PersistentPorts": {"output:exec": 1}}},
     {"Y": -320, "X": -1150, "Id": u("one"), "Label": "1", "Type": "constant_number",
      "Data": {"Value": 1.0}},
@@ -155,5 +158,5 @@ for fname, mid in [(f"vid_{args.version}.json", f"vid_{args.version}"),
     print("wrote", os.path.join(SG, fname))
 with open("/home/Phantom/Downloads/vid.json", "w") as fh:
     json.dump(manifest_for(f"vid_{args.version}"), fh, separators=(",", ":"), ensure_ascii=False)
-print(f"nodes: {len(nodes)} | edges: {len(edges)} | frames: {N} @ {20/PERIOD_TICKS} fps")
+print(f"nodes: {len(nodes)} | edges: {len(edges)} | frames: {N} @ {20/args.period} fps, loop {N/(20/args.period):.1f}s")
 print("base:", base)
