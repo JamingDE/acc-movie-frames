@@ -1,0 +1,11 @@
+{
+ "m.slot01": {
+  "category": "record",
+  "sounds": [
+   {
+    "name": "accmovie:movie/slot01",
+    "stream": true
+   }
+  ]
+ }
+}

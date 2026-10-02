@@ -1,0 +1,92 @@
+{
+ "fps": 20,
+ "namespace": "accmovie",
+ "menu": "accmovie:textures/movie/menu.jpg",
+ "prefix_fmt": "accmovie:textures/movie/{slot}/",
+ "slots": [
+  {
+   "id": "slot01",
+   "index": 1,
+   "frames": 601,
+   "sound": "accmovie:m.slot01",
+   "enabled": true
+  },
+  {
+   "id": "slot02",
+   "index": 2,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot03",
+   "index": 3,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot04",
+   "index": 4,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot05",
+   "index": 5,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot06",
+   "index": 6,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot07",
+   "index": 7,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot08",
+   "index": 8,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot09",
+   "index": 9,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot10",
+   "index": 10,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot11",
+   "index": 11,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  },
+  {
+   "id": "slot12",
+   "index": 12,
+   "frames": 0,
+   "sound": null,
+   "enabled": false
+  }
+ ]
+}
