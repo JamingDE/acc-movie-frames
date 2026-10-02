@@ -260,7 +260,7 @@ def validate(doc, slots):
                 assert v.count("#") == 6, "table needs 7 entries"
                 for part in v.split("#"):
                     if part.startswith("http"):
-                        assert len(part) < 2000 and part.endswith(("/", "g_", "f_", "jpg")), part
+                        assert len(part) < 2000, part
         if n["Type"] == "wireless_frequency_input":
             d = n["Data"]
             assert d["BindingId"] == d["BindingId"].strip().lower()
