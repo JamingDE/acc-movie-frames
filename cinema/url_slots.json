@@ -1,0 +1,19 @@
+{
+  "menu": "https://raw.githubusercontent.com/JamingDE/acc-movie-frames/main/menu.jpg",
+  "fps": 6.67,
+  "period": 3,
+  "slots": [
+    { "id": "slot01", "frames": 64, "prefix": "https://raw.githubusercontent.com/JamingDE/acc-movie-frames/main/frames/g_", "enabled": true },
+    { "id": "slot02", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot03", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot04", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot05", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot06", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot07", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot08", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot09", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot10", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot11", "frames": 0, "prefix": null, "enabled": false },
+    { "id": "slot12", "frames": 0, "prefix": null, "enabled": false }
+  ]
+}
